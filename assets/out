@@ -60,7 +60,7 @@ fi
 text="$(eval printf ${text} )"
 URL="https://api.telegram.org/bot${BOT_TOKEN}/sendMessage"
 
-curl -X POST --data chat_id=${CHAT_ID//\"/} --data text="{${tag_name}} ${text}" --data parse_mode=Markdown "$URL"
+curl -s -X POST --data chat_id=${CHAT_ID//\"/} --data text="{${tag_name}} ${text}" --data parse_mode=Markdown "$URL"
 
 #
 # print the output
